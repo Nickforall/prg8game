@@ -1,0 +1,17 @@
+{
+	"name": "",
+	"version": "0.1.0",
+	"scripts": {
+		"build": "webpack ./webpack.config.js -p",
+		"start": "webpack-dev-server ./webpack.config.js --content-base ./docs"
+	},
+	"dependencies": {
+		"@types/pixi.js": "^4.7.3",
+		"pixi.js": "^4.7.3",
+		"ts-loader": "4.0.1",
+		"typescript": "2.7.2",
+		"webpack": "4.1.1",
+		"webpack-cli": "2.0.11",
+		"webpack-dev-server": "3.1.1"
+	}
+}
