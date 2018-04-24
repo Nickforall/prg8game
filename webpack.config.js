@@ -4,7 +4,8 @@ module.exports = {
   entry: './src/Game.ts',
   output: {
     path: __dirname + '/docs',
-    filename: 'dist.js'
+    filename: 'dist.js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
