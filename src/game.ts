@@ -27,7 +27,13 @@ export default class Game {
     this.map = new Map();
 
     // initialize canvas
-    this.pixi = new PIXI.Application(800, 600, { backgroundColor: 0x000000 });    
+    this.pixi = new PIXI.Application(800, 600, {
+      backgroundColor: 0x000000,
+      resolution: window.devicePixelRatio,
+      autoResize: true
+    });
+    PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
+    
     document.body.appendChild(this.pixi.view);
   }
 
