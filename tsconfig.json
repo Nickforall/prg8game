@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "strict": true,
+        "lib": [ "es2015", "dom" ],
         "target": "es5",
         "removeComments": true,
         "sourceMap": true,
