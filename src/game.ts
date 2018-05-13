@@ -1,6 +1,7 @@
 import * as PIXI from "pixi.js";
 import Map from "./world/Map";
 import TextureManager from "./gfx/TextureManager";
+import PlayerCharacter from "./entities/PlayerCharacter";
 
 
 export default class Game {
@@ -38,6 +39,7 @@ export default class Game {
     await TextureManager.loadTextures();
 
     this.map.fill();
+    this.map.addCharacter(new PlayerCharacter(1, 1))
 
     this.isLoaded = true;
     console.log("Loaded Game");

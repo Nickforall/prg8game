@@ -5,6 +5,7 @@ export default class TextureManager {
 		return new Promise((resolve: () => void, reject: (error: Error) => void ) => {
 			PIXI.loader
 				.add('texture', "res/texture.png")
+				.add('grass', "res/grass.png")				
 				.load(() => resolve())
 		});
 	}

@@ -21,3 +21,7 @@ For the course, certain design patterns are required, they are listed below.
 An example of a singleton can be found [here](https://github.com/Nickforall/prg8game/blob/master/src/game.ts).
 
 This singleton is used to globalize the game instance.
+
+## Licensing
+
+Most sprites are made by `Alistair`, or are taken from pokemon tilesheets
