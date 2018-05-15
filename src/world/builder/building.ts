@@ -1,6 +1,6 @@
 import Map from '../Map';
 import Game from '../../Game';
-import Collidable from '../collidable';
+import Collidable from '../Collidable';
 
 export default class Building extends Collidable {
 	private sprite: PIXI.Sprite

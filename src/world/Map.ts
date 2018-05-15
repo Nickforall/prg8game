@@ -3,8 +3,9 @@ import IUpdatable from "../IUpdatable";
 import MapTile from "./MapTile";
 import Game from "../Game";
 import PlayerCharacter from "../entities/PlayerCharacter";
-import Building from "./builder/building";
-import Collidable from "./collidable";
+import Building from "./builder/Building";
+import Collidable from "./Collidable";
+import Walkway from "./builder/Walkway";
 
 export default class Map implements IUpdatable {
   private static width = 30;
@@ -24,6 +25,9 @@ export default class Map implements IUpdatable {
       }
     }
 
+    let walkway1 = new Walkway(1, 9, 26)
+    walkway1.set(this)
+
     this.collidables.push(new Building(2, 2, 4, 6, 'house1'))
     this.collidables.push(new Building(6, 2, 4, 6, 'house1'))
     this.collidables.push(new Building(10, 2, 4, 6, 'house1'))
@@ -32,6 +36,7 @@ export default class Map implements IUpdatable {
 
   setTile(x: number, y: number, texture: string) {
     this.tiles[y * Map.width + x].push(new MapTile(x, y, texture));
+    // console.log(x, y, texture, this.tiles[y * Map.width + x].length)
   }
 
   getTilesAt(x: number, y: number): Array<MapTile> {
