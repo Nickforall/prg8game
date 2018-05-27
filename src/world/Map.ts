@@ -6,6 +6,7 @@ import PlayerCharacter from "../entities/PlayerCharacter";
 import Building from "./builder/Building";
 import Collidable from "./Collidable";
 import Walkway from "./builder/Walkway";
+import Tree from "./builder/Tree"
 
 export default class Map implements IUpdatable {
   private static width = 30;
@@ -17,7 +18,7 @@ export default class Map implements IUpdatable {
   public tiles: Array<Array<MapTile>> = new Array(Map.width * Map.height).fill([]);
   public characters: Array<PlayerCharacter> = new Array();
   public collidables: Array<Collidable> = new Array();
-  
+
   fill() {
     for (let x = 0; x < Map.width; x++) {
       for (let y = 0; y < Map.height; y++) {
@@ -31,7 +32,9 @@ export default class Map implements IUpdatable {
     this.collidables.push(new Building(2, 2, 4, 6, 'house1'))
     this.collidables.push(new Building(6, 2, 4, 6, 'house1'))
     this.collidables.push(new Building(10, 2, 4, 6, 'house1'))
-    this.collidables.push(new Building(20, 2, 4, 6, 'house1'))           
+    this.collidables.push(new Building(20, 2, 4, 6, 'house1'))
+
+    this.collidables.push(new Tree(16, 2, 4, 6, 'tree1'))
   }
 
   setTile(x: number, y: number, texture: string) {
@@ -43,16 +46,16 @@ export default class Map implements IUpdatable {
     return this.tiles[y * Map.width + x];
   }
 
-	update() {
-		for (const tileEntity of this.tileEntities) {
+  update() {
+    for (const tileEntity of this.tileEntities) {
       tileEntity.update();
     }
-    
+
     for (const character of this.characters) {
       character.update()
     }
   }
-  
+
   addCharacter(character: PlayerCharacter) {
     this.characters.push(character);
   }
